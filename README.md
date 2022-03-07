@@ -1,15 +1,15 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Danilo
+- Leo 
+- sergio
 
 Link do Surge: www.link.com.br
 
-O que funciona:
-- Item 1
-- Item 2
+O que funciona: Estrutura Inicial
+- Router
+- Postman
 
 O que não funciona: 
 - Item 3
