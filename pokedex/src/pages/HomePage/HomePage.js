@@ -1,20 +1,17 @@
 import React from "react";
+import {PageWrap} from './style';
+import PokeCard from "../../components/PokeCard/PokeCard.js";
 
-
-
-
-
-
-
-
-
-const HomePage = () => {
+const HomePage = (props) => {
 
     return(
-        <div>
-            Sou a Home
-        </div>
-    )
-}
+        <PageWrap>
+            <h2>Poke List</h2>
+            <div>
+                <PokeCard/>
+            </div>
+        </PageWrap>
+    );
+};
 
-export default HomePage
+export default HomePage;
