@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export const PokeCard = (props) => {
+const PokeCard = (props) => {
   return (
     <Card sx={{ maxWidth: 345, margin: '10px', border: '2px solid yellow'}}>
       <CardMedia

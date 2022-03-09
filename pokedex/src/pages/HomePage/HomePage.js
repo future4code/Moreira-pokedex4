@@ -1,6 +1,6 @@
 import React from "react";
 import {PageWrap} from './style';
-import PokeCard from "../../components/PokeCard/PokeCard.js";
+import PokeCard from '../../Components/PokeCard/PokeCard';
 
 const HomePage = (props) => {
 
