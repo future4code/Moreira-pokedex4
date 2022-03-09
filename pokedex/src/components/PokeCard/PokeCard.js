@@ -6,6 +6,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import {primaryColor} from '../../constant/colors.js';
+
 
 const PokeCard = ({thisPokemon}) => {
 
@@ -30,7 +32,7 @@ const PokeCard = ({thisPokemon}) => {
 
     useEffect(() => {
         getPokemon(thisPokemon.url)
-    })
+    }, [])
 
     return (
         <div>
@@ -40,7 +42,7 @@ const PokeCard = ({thisPokemon}) => {
                     height="300"
                     image={onePokemon.sprites.front_default}
                     alt="Pokemon Icon"
-                    sx={{objectFit: 'cover'}}
+                    sx={{objectFit: 'cover', fontFamily: "'Roboto', sans-serif"}}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
@@ -48,8 +50,8 @@ const PokeCard = ({thisPokemon}) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small">{'Adicionar na Pokedex'}</Button>
-                    <Button size="small">{'Detalhes'}</Button>
+                    <Button size="small" sx={{color: `${primaryColor}`}}>{'Adicionar na Pokedex'}</Button>
+                    <Button size="small" sx={{color: `${primaryColor}`}}>{'Detalhes'}</Button>
                 </CardActions>    
             </Card>
         </div>
