@@ -1,51 +1,59 @@
-
-import React from "react";
-import Pokemon from "./Pokemon";
-/* import * as React from 'react'; */
-/* import Card from '@mui/material/Card';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography'; */
+import Typography from '@mui/material/Typography';
 
-const PokeCard = ({pokemon}) => {
-  
-  return (
-    <div>
-        {
-            pokemon.map((value, index) => {
-                
-                return (
-                    <div key={index}>
-                        {/* <p>{value.name}</p> */}
-                        <Pokemon thisPokemon={value}/>
-                    </div>
-                )
-            })
+const PokeCard = ({thisPokemon}) => {
+
+    const [onePokemon, setOnePokemon] = useState({
+        name:"",
+        sprites: {
+            front_default: ""
         }
-    </div>
-)
-  
-  /* return (
-    <Card sx={{ maxWidth: 345, margin: '10px', border: '2px solid yellow'}}>
-      <CardMedia
-        component="img"
-        height="300"
-        image={"https://img.joomcdn.net/5b0b3d8c71b6a293e51463dbc3f901e340f810e6_original.jpeg"}
-        alt="green iguana"
-        sx={{objectFit: 'cover'}}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {'Charizard'}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">{'Adicionar na Pokedex'}</Button>
-        <Button size="small">{'Detalhes'}</Button>
-      </CardActions>
-    </Card>
-  ); */
-};
+    })
+    
+    const getPokemon = (url) => {
+        axios
+            .get(url)
+            .then((response) => {
+                /* console.log(response) */
+                setOnePokemon(response.data)
+            })
+            .catch((error) => {
+                /* console.log(error) */
+            })
+    }
+
+    useEffect(() => {
+        getPokemon(thisPokemon.url)
+    })
+
+    return (
+        <div>
+            <Card sx={{ maxWidth: 345, margin: '10px', border: '2px solid yellow'}}>
+                <CardMedia
+                    component="img"
+                    height="300"
+                    image={onePokemon.sprites.front_default}
+                    alt="Pokemon Icon"
+                    sx={{objectFit: 'cover'}}
+                />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {onePokemon.name}
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                    <Button size="small">{'Adicionar na Pokedex'}</Button>
+                    <Button size="small">{'Detalhes'}</Button>
+                </CardActions>    
+            </Card>
+        </div>
+    )
+}
+
 export default PokeCard;

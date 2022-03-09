@@ -1,8 +1,8 @@
 import React, { useEffect, useState} from "react";
 import axios from "axios";
 import {PageWrap} from './style';
-import PokeCard from "../../Components/PokeCard/PokeCard.js";
 import { BASE_URL } from "../../constant/urls";
+import Pokemons from "../../Components/PokeCard/Pokemons";
 
 
 const HomePage = (props) => {
@@ -31,7 +31,7 @@ const HomePage = (props) => {
     return(
         <PageWrap>
             <div>
-                <PokeCard pokemon={pokemon}/>
+                <Pokemons pokemon={pokemon}/>
             </div>
         </PageWrap>
     );
