@@ -14,10 +14,10 @@ const Header = () => {
       <StyledToolbar>
         <Typography variant="h6">
           Pokédex
-        </Typography>
+        </Typography>        
         <Button  color="inherit">
-          
-        </Button>
+          Detalhes
+        </Button>        
       </StyledToolbar>
     </AppBar>
   );
