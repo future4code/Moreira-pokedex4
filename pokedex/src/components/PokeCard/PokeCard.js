@@ -1,13 +1,33 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
+
+import React from "react";
+import Pokemon from "./Pokemon";
+/* import * as React from 'react'; */
+/* import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import Typography from '@mui/material/Typography'; */
 
-export const PokeCard = (props) => {
+const PokeCard = ({pokemon}) => {
+  
   return (
+    <div>
+        {
+            pokemon.map((value, index) => {
+                
+                return (
+                    <div key={index}>
+                        {/* <p>{value.name}</p> */}
+                        <Pokemon thisPokemon={value}/>
+                    </div>
+                )
+            })
+        }
+    </div>
+)
+  
+  /* return (
     <Card sx={{ maxWidth: 345, margin: '10px', border: '2px solid yellow'}}>
       <CardMedia
         component="img"
@@ -26,6 +46,6 @@ export const PokeCard = (props) => {
         <Button size="small">{'Detalhes'}</Button>
       </CardActions>
     </Card>
-  );
+  ); */
 };
 export default PokeCard;
