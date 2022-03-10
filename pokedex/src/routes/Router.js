@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import HomePage from "../pages/HomePage/HomePage";
-import Header from "../components/Header/Header";
+import Header from "../Components/Header/Header";
 import PokedexPage from "../pages/PokedexPage/PokedexPage";
 import PokemonInfoPage from "../pages/PokemonInfoPage/PokemonInfoPage";
 

@@ -51,7 +51,7 @@ const PokeCard = ({thisPokemon}) => {
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h3" component="div">
-                        {onePokemon.name}
+                        {onePokemon.id}.{onePokemon.name.charAt(0).toUpperCase() + onePokemon.name.slice(1)}
                     </Typography>
                 </CardContent>
                 <CardActions>

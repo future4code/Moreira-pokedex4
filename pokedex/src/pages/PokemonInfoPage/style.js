@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
 export const PageWrap = styled.div`
-    margin-top: 10rem;
+    padding-top: 10rem;
 `;
