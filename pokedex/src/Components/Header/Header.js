@@ -38,10 +38,12 @@ const Header = () => {
     <AppBar position="fixed">
       <StyledToolbar>
         <Typography variant="h6">
+
           <img src={logo} alt="logo pokedex" style={{width: '200px', marginTop: '5px'}}/>
         </Typography>
         
         {rightButton()}
+
 
       </StyledToolbar>
     </AppBar>

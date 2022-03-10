@@ -2,10 +2,10 @@ import React, { useEffect, useState} from "react";
 import axios from "axios";
 import {PageWrap} from './style';
 import { BASE_URL } from "../../constant/urls";
-import Pokemons from "../../components/PokeCard/Pokemons";
+import Pokemons from "../../Components/PokeCard/Pokemons";
 
 
-const HomePage = () => {
+const HomePage = (props) => {
 
     const [pokemon, setPokemon] = useState([
         { name: "bulbasaur", url: "https://pokeapi.co/api/v2/pokemon/1/"}
@@ -26,7 +26,7 @@ const HomePage = () => {
 
     useEffect (() => {
         getAllPokemons()
-    }, [])
+    })
 
     return(
         <PageWrap>
