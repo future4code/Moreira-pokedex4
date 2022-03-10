@@ -14,7 +14,7 @@ const HomePage = (props) => {
     // Only 20 pokemons so far
     const getAllPokemons = () => {
         axios
-        .get(`${BASE_URL}`)
+        .get(`${BASE_URL}?offset=0&limit=20`)
         .then((response) => {
             /* console.log(response.data.results) */
             setPokemon(response.data.results)

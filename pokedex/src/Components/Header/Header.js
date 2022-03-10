@@ -16,11 +16,11 @@ const Header = () => {
   const rightButton = () => {
     if (pathname === '/pokedex') {
       return (
-        
+        <>
         <Button onClick={() => {navigate('/')}} sx={{background: secundaryColor, color: primaryColor}}>
         Pokelista
         </Button>
-
+        </>
       );  
     }
     else {
@@ -30,7 +30,7 @@ const Header = () => {
           Pokedex
         </Button>
 
-      )  
+      );
     }
   };
 
