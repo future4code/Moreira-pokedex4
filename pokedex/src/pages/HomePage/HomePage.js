@@ -7,8 +7,7 @@ import useRequestData from "../../hooks/useRequestData";
 
 
 
-
-const HomePage = () => {
+const HomePage = (props) => {
 
     
 
@@ -31,6 +30,7 @@ const HomePage = () => {
         getAllPokemons() 
       
     }, [])
+
 
     return(
         <PageWrap>

@@ -33,7 +33,7 @@ const PokeCard = ({thisPokemon}) => {
 
     useEffect(() => {
         getPokemon(thisPokemon.url)
-    }, [])
+    })
 
     const clickCard = () => {
         navigate(`/${onePokemon.name}`)
@@ -47,7 +47,7 @@ const PokeCard = ({thisPokemon}) => {
                     height="300"
                     image={onePokemon.sprites.front_default}
                     alt="Pokemon Icon"
-                    sx={{objectFit: 'cover', fontFamily: "'Roboto', sans-serif"}}
+                    sx={{objectFit: 'cover'}}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h3" component="div">
