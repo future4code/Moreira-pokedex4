@@ -5,7 +5,7 @@ Nome dos integrantes:
 - Leo 
 - sergio
 
-Link do Surge: www.link.com.br
+Link do Surge: nossa-pokedex.surge.sh
 
 O que funciona: Estrutura Inicial
 - Router
