@@ -1,5 +1,5 @@
 import React from "react";
-import PokeInfoCard from "../../Components/PokeInfo/PokeInfoCard";
+import PokeInfoCard from "../../components/PokeInfo/PokeInfoCard";
 import { PageWrap } from './style';
  
 const PokemonInfoPage = () => {

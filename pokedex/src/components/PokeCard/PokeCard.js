@@ -41,15 +41,16 @@ const PokeCard = ({thisPokemon}) => {
 
     return (
         <div>
-            <Card onClick={() => {clickCard()}} sx={{ maxWidth: 345, margin: '10px', border: '2px solid yellow'}}>
+            <Card sx={{ maxWidth: 345, margin: '10px', border: '2px solid yellow'}}>
                 <CardMedia
                     component="img"
                     height="300"
                     image={onePokemon.sprites.front_default}
                     alt="Pokemon Icon"
                     sx={{objectFit: 'cover'}}
+                    onClick={() => {clickCard()}} 
                 />
-                <CardContent>
+                <CardContent onClick={() => {clickCard()}}>
                     <Typography gutterBottom variant="h3" component="div">
                         {onePokemon.id}.{onePokemon.name.charAt(0).toUpperCase() + onePokemon.name.slice(1)}
                     </Typography>
