@@ -3,9 +3,8 @@ import {useNavigate, useLocation} from 'react-router-dom'
 //import { AppBar } from "@mui/material";
 //import AppBar from '@mui/material/AppBar';
 import AppBar from "@material-ui/core/AppBar";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { StyledToolbar } from "./styled";
+import { StyledToolbar, StyledButton } from "./styled";
 import logo from '../../assets/logoPokedex.png';
 import {primaryColor, secundaryColor} from '../../constant/colors';
 
@@ -14,22 +13,20 @@ const Header = () => {
   const {pathname} = useLocation();
 
   const rightButton = () => {
-    if (pathname === '/pokedex') {
+    if (pathname === '/') {
       return (
         <>
-        <Button onClick={() => {navigate('/')}} sx={{background: secundaryColor, color: primaryColor}}>
-        Pokelista
-        </Button>
+          <StyledButton onClick={() => {navigate('/pokedex')}} sx={{color: primaryColor}}>
+            Pokedex
+          </StyledButton>    
         </>
       );  
     }
     else {
       return(
-
-        <Button onClick={() => {navigate('/pokedex')}} sx={{background: secundaryColor, color: primaryColor}}>
-          Pokedex
-        </Button>
-
+        <StyledButton onClick={() => {navigate('/')}} sx={{color: primaryColor}}>
+          Pokelista
+        </StyledButton>
       );
     }
   };

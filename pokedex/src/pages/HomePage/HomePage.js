@@ -2,7 +2,7 @@ import React, { useEffect, useState} from "react";
 import axios from "axios";
 import {PageWrap} from './style';
 import { BASE_URL } from "../../constant/urls";
-import Pokemons from "../../Components/PokeCard/Pokemons";
+import Pokemons from "../../components/PokeCard/Pokemons";
 import useRequestData from "../../hooks/useRequestData";
 
 
