@@ -5,11 +5,7 @@ import { BASE_URL } from "../../constant/urls";
 import Pokemons from "../../Components/PokeCard/Pokemons";
 import useRequestData from "../../hooks/useRequestData";
 
-
-
-const HomePage = (props) => {
-
-    
+const HomePage = () => {    
 
    const [pokemon, setPokemon] = useState([
         { name: "bulbasaur", url: "https://pokeapi.co/api/v2/pokemon/1/"}
@@ -29,14 +25,14 @@ const HomePage = (props) => {
     useEffect (() => {
         getAllPokemons() 
       
-    }, [])
+    }, [])  
 
 
     return(
         <PageWrap>
             <div>
                 {loading && "...Carregando"}
-                <Pokemons pokemon={pokemon}/>
+                <Pokemons pokemon={pokemon} setPokemon={setPokemon}/>
             </div>
         </PageWrap>
     );

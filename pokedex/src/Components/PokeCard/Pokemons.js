@@ -11,7 +11,10 @@ const Pokemons = ({pokemon}) => {
                 
                 return (
                     <div key={index}>
-                        <PokeCard thisPokemon={value}/>
+                        <PokeCard
+                         thisPokemon={value}
+                         pokemon={pokemon}                         
+                         />
                     </div>
                 )
             })
