@@ -6,11 +6,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import {primaryColor, secundaryColor} from '../../constant/colors.js';
+import {primaryColor} from '../../constant/colors.js';
 import { useNavigate } from "react-router-dom";
 
 
-const PokeCard = ({thisPokemon}) => {
+const PokeCard = ({thisPokemon, addPokedex}) => {
     const navigate = useNavigate();
     const [onePokemon, setOnePokemon] = useState({
         name:"",
@@ -41,7 +41,7 @@ const PokeCard = ({thisPokemon}) => {
 
     return (
         <div>
-            <Card sx={{ maxWidth: 345, margin: '10px', border: '2px solid yellow'}}>
+            <Card sx={{ maxWidth: 345, margin: '10px', border: '2px solid yellow', cursor: 'pointer'}}>
                 <CardMedia
                     component="img"
                     height="300"
@@ -56,7 +56,7 @@ const PokeCard = ({thisPokemon}) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button variant="outlined" size="small" sx={{color: `${primaryColor}`, outline: `2px solid ${primaryColor}` , marginBottom: '10%'}}>{'Adicionar na Pokedex'}</Button>
+                    <Button variant="outlined" size="small" sx={{color: `${primaryColor}`, outline: `2px solid ${primaryColor}` , marginBottom: '10%'}} onClick={() => addPokedex(onePokemon.name)}>{'Adicionar na Pokedex'}</Button>
                 </CardActions>    
             </Card>
         </div>

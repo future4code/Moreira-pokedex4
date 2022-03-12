@@ -2,7 +2,7 @@ import React from "react";
 import PokeCard from "./PokeCard";
 
 
-const Pokemons = ({pokemon}) => {
+const Pokemons = ({pokemon, addPokedex}) => {
   
   return (
     <div>
@@ -11,7 +11,7 @@ const Pokemons = ({pokemon}) => {
                 
                 return (
                     <div key={index}>
-                        <PokeCard thisPokemon={value}/>
+                        <PokeCard thisPokemon={value} addPokedex={addPokedex}/>
                     </div>
                 )
             })
