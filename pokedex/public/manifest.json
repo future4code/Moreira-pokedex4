@@ -6,8 +6,12 @@
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+<<<<<<< HEAD
     }  
     
+=======
+    }
+>>>>>>> 1eea218ea3d7f2e89ec4ea15dabe2add9eb303ca
   ],
   "start_url": ".",
   "display": "standalone",
