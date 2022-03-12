@@ -4,9 +4,8 @@ import { BASE_URL } from "../../constant/urls";
 import Pokemons from "../../components/PokeCard/Pokemons";
 import useRequestData from "../../hooks/useRequestData";
 
+const HomePage = () => {    
 
-
-const HomePage = () => {
     const savedDex = localStorage.getItem('dex');
     const initialDex = JSON.parse(savedDex);
     const savedList = localStorage.getItem('pokeList');
@@ -61,4 +60,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage; 
+export default HomePage;

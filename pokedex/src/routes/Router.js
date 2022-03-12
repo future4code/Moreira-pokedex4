@@ -7,21 +7,16 @@ import PokemonInfoPage from "../pages/PokemonInfoPage/PokemonInfoPage";
 import Header from "../components/Header/Header"
 
 
-
-
-
-
-
 export const AllRoutes = () => {
-
+    
 
     return(
         <BrowserRouter>
         <Header/>
             <Routes>
-                <Route exact path={"/"} element={<HomePage/>}/>
+                <Route exact path={"/"} element={<HomePage />}/>
                 <Route exact path={"/pokedex"} element={<PokedexPage/>}/>
-                <Route exact path={"/:pokemon"} element={<PokemonInfoPage/>}/>
+                <Route exact path={"/pokemon"} element={<PokemonInfoPage/>}/>
                 <Route exact path={"*"} element={<ErrorPage/>}/>
             </Routes>
         </BrowserRouter>

@@ -39,6 +39,21 @@ const PokeCard = ({thisPokemon, addPokedex}) => {
         navigate(`/${onePokemon.name}`)
     }
 
+   
+
+    const addPokedex = (name) => {
+        let index;
+        pokemon.forEach((poke) => {
+            if(poke.name === name){
+             index = pokemon.indexOf(poke);
+             console.log(index);
+            }            
+        })
+               
+       // const newPokemos =[...pokemon]
+      // setPoKemon(newPokemos);
+    }
+
     return (
         <div>
             <Card sx={{ maxWidth: 345, margin: '10px', border: '2px solid yellow', cursor: 'pointer'}}>
@@ -59,7 +74,7 @@ const PokeCard = ({thisPokemon, addPokedex}) => {
                     <Button variant="outlined" size="small" sx={{color: `${primaryColor}`, outline: `2px solid ${primaryColor}` , marginBottom: '10%'}} onClick={() => addPokedex(onePokemon.name)}>{'Adicionar na Pokedex'}</Button>
                 </CardActions>    
             </Card>
-        </div>
+         </div>
     )
 }
 
