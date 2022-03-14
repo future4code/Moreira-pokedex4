@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PokeCard from "../../components/PokeCard/PokeCard.js";
+import PokeCard from "../../Components/PokeCard/PokeCard.js";
 import {PageWrap} from './style.js'
 
 const PokedexPage = () => {

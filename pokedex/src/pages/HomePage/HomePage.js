@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from "react";
 import {PageWrap} from './style';
 import { BASE_URL } from "../../constant/urls";
-import Pokemons from "../../components/PokeCard/Pokemons";
+import Pokemons from "../../Components/PokeCard/Pokemons";
 import useRequestData from "../../hooks/useRequestData";
 
 const HomePage = () => {    
@@ -59,7 +59,7 @@ const HomePage = () => {
             <h2>Poke lista</h2>
             <div>
                 {loading && "...Carregando"}
-                <Pokemons pokemon={pokemon} addPokedex={addPokedex}/>
+                <Pokemons pokemon={pokemon} setPokemon={setPokemon}/>
             </div>
         </PageWrap>
     );
