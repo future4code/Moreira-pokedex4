@@ -16,7 +16,7 @@ export const AllRoutes = () => {
             <Routes>
                 <Route exact path={"/"} element={<HomePage />}/>
                 <Route exact path={"/pokedex"} element={<PokedexPage/>}/>
-                <Route exact path={"/pokemon"} element={<PokemonInfoPage/>}/>
+                <Route exact path={"/:pokemon"} element={<PokemonInfoPage/>}/>
                 <Route exact path={"*"} element={<ErrorPage/>}/>
             </Routes>
         </BrowserRouter>

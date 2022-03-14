@@ -26,7 +26,7 @@ const HomePage = () => {
     }, [])
 
     
-    const addPokedex = (name) => {
+    const addPokedex = (id, name) => {
         let index;
 
         pokemon.forEach((poke) => {
@@ -38,7 +38,14 @@ const HomePage = () => {
 
         const pokeToDex = pokemon.splice(index, 1);
 
+        const dexRest = dex.splice(id-1, dex.length);
+
         const newDex = [...dex, pokeToDex[0]];
+
+        dexRest.forEach((poke) => {
+            newDex.push(poke);
+        });
+
         setDex(newDex);
         localStorage.setItem('dex', JSON.stringify(newDex));
 
@@ -47,11 +54,9 @@ const HomePage = () => {
         localStorage.setItem('pokeList', JSON.stringify(newList));
     }
 
-    console.log(dex);
-    console.log(pokemon);
-
     return(
         <PageWrap>
+            <h2>Poke lista</h2>
             <div>
                 {loading && "...Carregando"}
                 <Pokemons pokemon={pokemon} setPokemon={setPokemon}/>

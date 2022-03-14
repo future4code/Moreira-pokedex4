@@ -7,17 +7,17 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {primaryColor} from '../../constant/colors.js';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
-const PokeCard = ({thisPokemon, pokemon, setPokemon}) => {
-    const navigate = useNavigate();   
-
+const PokeCard = ({thisPokemon, addPokedex, removePokedex}) => {
+    const navigate = useNavigate();
     const [onePokemon, setOnePokemon] = useState({
         name:"",
         sprites: {
             front_default: ""
         }
     })
+    const location = useLocation();
     
     const getPokemon = (url) => {
         axios
@@ -36,21 +36,20 @@ const PokeCard = ({thisPokemon, pokemon, setPokemon}) => {
     })
 
     const clickCard = () => {
-        navigate(`/${onePokemon.name}`)
+        navigate(`/${onePokemon.name}`);
     }
 
-    const addPokedex = (name) => {
-       let index;
-        pokemon.forEach((poke) => {
-            if(poke.name === name){
-             index = pokemon.indexOf(poke);
-             console.log(index);
-            }                     
-        })
-               
-       
-    //    setPokemon(newPokemons);
-    //     console.log(newPokemons)
+    const changeButton = () => {
+        if (location.pathname === '/pokedex') {
+            return (
+                <Button variant="outlined" size="small" sx={{color: `${primaryColor}`, outline: `2px solid ${primaryColor}` , marginBottom: '10%'}} onClick={() => removePokedex(onePokemon.id, onePokemon.name)}>{'Remover da Pokedex'}</Button>
+            );
+        }
+        else {
+            return (
+                <Button variant="outlined" size="small" sx={{color: `${primaryColor}`, outline: `2px solid ${primaryColor}` , marginBottom: '10%'}} onClick={() => addPokedex(onePokemon.id, onePokemon.name)}>{'Adicionar na Pokedex'}</Button>
+            );
+        }
     }
 
     return (
@@ -69,8 +68,8 @@ const PokeCard = ({thisPokemon, pokemon, setPokemon}) => {
                         {onePokemon.id}.{onePokemon.name.charAt(0).toUpperCase() + onePokemon.name.slice(1)}
                     </Typography>
                 </CardContent>
-                <CardActions onClick={() =>addPokedex()}>
-                    <Button variant="outlined" size="small" sx={{color: `${primaryColor}`, outline: `2px solid ${primaryColor}` , marginBottom: '10%'}} onClick={() => addPokedex(onePokemon.name)}>{'Adicionar na Pokedex'}</Button>
+                <CardActions>
+                    {changeButton()}
                 </CardActions>    
             </Card>
          </div>

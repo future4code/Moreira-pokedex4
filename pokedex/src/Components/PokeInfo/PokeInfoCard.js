@@ -22,6 +22,10 @@ const PokeInfoCard = () => {
 
     }
 
+    useEffect(() => {
+        getPokeInfo();
+    }, [])
+
     
 
     
