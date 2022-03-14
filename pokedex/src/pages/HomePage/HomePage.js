@@ -59,7 +59,7 @@ const HomePage = () => {
             <h2>Poke lista</h2>
             <div>
                 {loading && "...Carregando"}
-                <Pokemons pokemon={pokemon} setPokemon={setPokemon}/>
+                <Pokemons pokemon={pokemon} setPokemon={setPokemon} addPokedex={addPokedex}/>
             </div>
         </PageWrap>
     );
