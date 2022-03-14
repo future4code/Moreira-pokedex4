@@ -9,9 +9,9 @@ import Typography from '@mui/material/Typography';
 import {primaryColor} from '../../constant/colors.js';
 import { useNavigate } from "react-router-dom";
 
+const PokeCard = ({thisPokemon, pokemon, setPokemon}) => {
+    const navigate = useNavigate();   
 
-const PokeCard = ({thisPokemon, addPokedex}) => {
-    const navigate = useNavigate();
     const [onePokemon, setOnePokemon] = useState({
         name:"",
         sprites: {
@@ -39,19 +39,18 @@ const PokeCard = ({thisPokemon, addPokedex}) => {
         navigate(`/${onePokemon.name}`)
     }
 
-   
-
     const addPokedex = (name) => {
-        let index;
+       let index;
         pokemon.forEach((poke) => {
             if(poke.name === name){
              index = pokemon.indexOf(poke);
              console.log(index);
-            }            
+            }                     
         })
                
-       // const newPokemos =[...pokemon]
-      // setPoKemon(newPokemos);
+       
+    //    setPokemon(newPokemons);
+    //     console.log(newPokemons)
     }
 
     return (
@@ -70,7 +69,7 @@ const PokeCard = ({thisPokemon, addPokedex}) => {
                         {onePokemon.id}.{onePokemon.name.charAt(0).toUpperCase() + onePokemon.name.slice(1)}
                     </Typography>
                 </CardContent>
-                <CardActions>
+                <CardActions onClick={() =>addPokedex()}>
                     <Button variant="outlined" size="small" sx={{color: `${primaryColor}`, outline: `2px solid ${primaryColor}` , marginBottom: '10%'}} onClick={() => addPokedex(onePokemon.name)}>{'Adicionar na Pokedex'}</Button>
                 </CardActions>    
             </Card>
